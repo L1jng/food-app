@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Recipe App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-green-50 to-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm border-b border-green-100 sticky top-0 z-10">
+        <div class="max-w-md mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-xl font-semibold text-green-800">Today's Recipes</h1>
+                    <p class="text-sm text-green-600">Inspiration for every meal</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="p-2 text-green-700 hover:bg-green-50 rounded-lg">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                    <button class="p-2 text-green-700 hover:bg-green-50 rounded-lg">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-md mx-auto px-4 pb-20">
+        <!-- Today's Recommendations -->
+        <section class="py-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-semibold text-gray-800">Today's Recommendations</h2>
+                <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs">
+                    Based on your ingredients
+                </span>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Recipe Card 1 -->
+                <div class="bg-white border border-green-100 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="flex">
+                        <div class="w-20 h-20 bg-green-200 flex items-center justify-center">
+                            <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1 p-3">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="font-medium text-gray-800 mb-1">Tomato Egg Noodles</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        <span>15 mins</span>
+                                        <span>•</span>
+                                        <span>Easy</span>
+                                    </div>
+                                    <div class="flex gap-1">
+                                        <span class="text-xs border border-green-200 text-green-700 px-2 py-1 rounded">Quick</span>
+                                        <span class="text-xs border border-green-200 text-green-700 px-2 py-1 rounded">Nutritious</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium text-green-600">95%</div>
+                                    <div class="text-xs text-gray-500">Match</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipe Card 2 -->
+                <div class="bg-white border border-green-100 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="flex">
+                        <div class="w-20 h-20 bg-green-200 flex items-center justify-center">
+                            <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1 p-3">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="font-medium text-gray-800 mb-1">Garlic Broccoli</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        <span>10 mins</span>
+                                        <span>•</span>
+                                        <span>Easy</span>
+                                    </div>
+                                    <div class="flex gap-1">
+                                        <span class="text-xs border border-green-200 text-green-700 px-2 py-1 rounded">Light</span>
+                                        <span class="text-xs border border-green-200 text-green-700 px-2 py-1 rounded">Healthy</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium text-green-600">88%</div>
+                                    <div class="text-xs text-gray-500">Match</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipe Card 3 -->
+                <div class="bg-white border border-green-100 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                    <div class="flex">
+                        <div class="w-20 h-20 bg-green-200 flex items-center justify-center">
+                            <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1 p-3">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="font-medium text-gray-800 mb-1">Braised Pork Ribs</h3>
+                                    <div class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12,6 12,12 16,14"></polyline>
+                                        </svg>
+                                        <span>45 mins</span>
+                                        <span>•</span>
+                                        <span>Medium</span>
+                                    </div>
+                                    <div class="flex gap-1">
+                                        <span class="text-xs border border-green-200 text-green-700 px-2 py-1 rounded">Home-style</span>
+                                        <span class="text-xs border border-green-200 text-green-700 px-2 py-1 rounded">Goes with rice</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm font-medium text-green-600">82%</div>
+                                    <div class="text-xs text-gray-500">Match</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="py-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Quick Access</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white border border-green-100 rounded-lg p-4 text-center card-hover cursor-pointer">
+                    <svg class="h-8 w-8 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    <h3 class="font-medium text-gray-800 mb-1">My Ingredients</h3>
+                    <p class="text-sm text-green-600">12 items</p>
+                </div>
+
+                <div class="bg-white border border-green-100 rounded-lg p-4 text-center card-hover cursor-pointer">
+                    <svg class="h-8 w-8 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12,6 12,12 16,14"></polyline>
+                    </svg>
+                    <h3 class="font-medium text-gray-800 mb-1">15-min Quick</h3>
+                    <p class="text-sm text-green-600">24 items</p>
+                </div>
+
+                <div class="bg-white border border-green-100 rounded-lg p-4 text-center card-hover cursor-pointer">
+                    <svg class="h-8 w-8 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                    <h3 class="font-medium text-gray-800 mb-1">My Favorites</h3>
+                    <p class="text-sm text-green-600">8 items</p>
+                </div>
+
+                <div class="bg-white border border-green-100 rounded-lg p-4 text-center card-hover cursor-pointer">
+                    <svg class="h-8 w-8 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <h3 class="font-medium text-gray-800 mb-1">Taste Preferences</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipe Inspiration -->
+        <section class="py-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Recipe Inspiration</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white border border-green-100 rounded-lg p-3 card-hover cursor-pointer">
+                    <div class="w-full h-20 bg-green-200 rounded-md mb-2 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-gray-800 text-sm">Breakfast Ideas</h3>
+                    <p class="text-xs text-green-600">32 recipes</p>
+                </div>
+
+                <div class="bg-white border border-green-100 rounded-lg p-3 card-hover cursor-pointer">
+                    <div class="w-full h-20 bg-green-200 rounded-md mb-2 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-gray-800 text-sm">Lunch Box Recipes</h3>
+                    <p class="text-xs text-green-600">28 recipes</p>
+                </div>
+
+                <div class="bg-white border border-green-100 rounded-lg p-3 card-hover cursor-pointer">
+                    <div class="w-full h-20 bg-green-200 rounded-md mb-2 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-gray-800 text-sm">Family Dinner</h3>
+                    <p class="text-xs text-green-600">45 recipes</p>
+                </div>
+
+                <div class="bg-white border border-green-100 rounded-lg p-3 card-hover cursor-pointer">
+                    <div class="w-full h-20 bg-green-200 rounded-md mb-2 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-medium text-gray-800 text-sm">Holiday Specials</h3>
+                    <p class="text-xs text-green-600">18 recipes</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-green-100">
+        <div class="max-w-md mx-auto px-4">
+            <div class="flex justify-around py-2">
+                <button class="flex flex-col items-center py-2 px-3 rounded-lg text-green-600 bg-green-50">
+                    <svg class="h-5 w-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v3H8V5z"></path>
+                    </svg>
+                    <span class="text-xs">Home</span>
+                </button>
+
+                <button class="flex flex-col items-center py-2 px-3 rounded-lg text-gray-500 hover:text-green-600">
+                    <svg class="h-5 w-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                    </svg>
+                    <span class="text-xs">Ingredients</span>
+                </button>
+
+                <button class="flex flex-col items-center py-2 px-3 rounded-lg text-gray-500 hover:text-green-600">
+                    <svg class="h-5 w-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span class="text-xs">Recommendations</span>
+                </button>
+
+                <button class="flex flex-col items-center py-2 px-3 rounded-lg text-gray-500 hover:text-green-600">
+                    <svg class="h-5 w-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class="text-xs">Profile</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
